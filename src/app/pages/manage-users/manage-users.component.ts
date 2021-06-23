@@ -1,11 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-interface Person {
-  key: string;
-  name: string;
-  age: number;
-  address: string;
-}
+import { Person, UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-manage-users',
@@ -13,28 +7,11 @@ interface Person {
   styleUrls: ['./manage-users.component.scss'],
 })
 export class ManageUsersComponent implements OnInit {
-  users: Person[] = [
-    {
-      key: '1',
-      name: 'John Brown',
-      age: 32,
-      address: 'New York No. 1 Lake Park',
-    },
-    {
-      key: '2',
-      name: 'Jim Green',
-      age: 42,
-      address: 'London No. 1 Lake Park',
-    },
-    {
-      key: '3',
-      name: 'Joe Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park',
-    },
-  ];
+  users: Person[];
 
-  constructor() {}
+  constructor(private userService: UserService) {
+    this.users = this.userService.getUsers();
+  }
 
   ngOnInit(): void {}
 }
