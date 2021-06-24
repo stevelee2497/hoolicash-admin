@@ -1,0 +1,26 @@
+<nz-table #table [nzData]="categories">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Icon</th>
+      <th>Transactions</th>
+      <th>Created At</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let category of table.data">
+      <td>{{ category.name }}</td>
+      <td>{{ category.type }}</td>
+      <td>{{ category.icon }}</td>
+      <td>{{ category.transactions }}</td>
+      <td>{{ category.createdAt }}</td>
+      <td>
+        <a>Action 一 {{ category.name }}</a>
+        <nz-divider nzType="vertical"></nz-divider>
+        <a>Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

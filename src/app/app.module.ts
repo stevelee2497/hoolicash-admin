@@ -11,6 +11,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ManageUsersModule } from './pages/manage-users/manage-users.module';
 import { LayoutsModule } from './layouts/layouts.module';
 import { CreateUserModule } from './pages/create-user/create-user.module';
+import { ManageCategoriesModule } from './pages/manage-categories/manage-categories.module';
+import { AppRoutingModule } from './app-routing.module';
+import { LoginModule } from './pages/login/login.module';
 
 registerLocaleData(en);
 
@@ -21,9 +24,12 @@ registerLocaleData(en);
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ManageUsersModule,
     LayoutsModule,
     CreateUserModule,
+    ManageUsersModule,
+    ManageCategoriesModule,
+    AppRoutingModule,
+    LoginModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent],

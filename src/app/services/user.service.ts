@@ -1,11 +1,5 @@
 import { Injectable } from '@angular/core';
-
-export interface Person {
-  key: string;
-  name: string;
-  age: number;
-  address: string;
-}
+import { Person } from './models';
 
 @Injectable({
   providedIn: 'root',
