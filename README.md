@@ -1,3 +1,5 @@
+[![CI/CD](https://github.com/stevelee2497/hoolicash-admin/actions/workflows/config.yml/badge.svg)](https://github.com/stevelee2497/hoolicash-admin/actions/workflows/config.yml)
+
 # HoolicashAdmin
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.5.
