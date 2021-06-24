@@ -12,12 +12,12 @@
   <tbody>
     <tr *ngFor="let category of table.data">
       <td>{{ category.name }}</td>
-      <td>{{ category.type }}</td>
-      <td>{{ category.icon }}</td>
+      <td>{{ category.transactionType }}</td>
+      <td>{{ category.iconUrl }}</td>
       <td>{{ category.transactions }}</td>
-      <td>{{ category.createdAt }}</td>
+      <td>{{ category.createdOn }}</td>
       <td>
-        <a>Action 一 {{ category.name }}</a>
+        <a>Edit</a>
         <nz-divider nzType="vertical"></nz-divider>
         <a>Delete</a>
       </td>

@@ -1,8 +1,7 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
-import { ErrorResponse } from './models';
+import { throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -25,12 +24,12 @@ export class HelperService {
     return throwError(error.error);
   }
 
-  request<R>(method: string, url: string, data: any, auth = true) {
+  request<R>(method: string, url: string, data?: any, auth = true) {
     let options: any = {
       'Content-Type': 'application/json',
     };
     if (auth) {
-      options.Authorization = localStorage.getItem('token');
+      options.Authorization = `Bearer ${localStorage.getItem('token')}`;
     }
 
     return this.http

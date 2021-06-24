@@ -1,24 +1,14 @@
 import { Injectable } from '@angular/core';
-
-export interface Category {
-  id: string;
-  name: string;
-  type: string;
-  transactions: number;
-  icon: string;
-  createdAt: string;
-  iconUrl: string;
-}
+import { Category } from '../models/category';
+import { HelperService } from './helper.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CategoryService {
-  private categories: Category[] = [];
-
-  constructor() {}
+  constructor(private httpHelper: HelperService) {}
 
   getCategories() {
-    return this.categories;
+    return this.httpHelper.request<Category[]>('GET', '/category');
   }
 }
