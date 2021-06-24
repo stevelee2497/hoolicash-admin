@@ -15,6 +15,7 @@ export class ManageCategoriesComponent implements OnInit {
   constructor(private categoryService: CategoryService) {}
 
   ngOnInit(): void {
+    this.loading = true;
     this.categoryService.getCategories().subscribe(
       (data: Category[]) => {
         this.categories = data;

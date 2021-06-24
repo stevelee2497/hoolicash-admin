@@ -1,26 +1,28 @@
-<nz-table #table [nzData]="categories">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Icon</th>
-      <th>Transactions</th>
-      <th>Created At</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let category of table.data">
-      <td>{{ category.name }}</td>
-      <td>{{ category.transactionType }}</td>
-      <td>{{ category.iconUrl }}</td>
-      <td>{{ category.transactions }}</td>
-      <td>{{ category.createdOn }}</td>
-      <td>
-        <a>Edit</a>
-        <nz-divider nzType="vertical"></nz-divider>
-        <a>Delete</a>
-      </td>
-    </tr>
-  </tbody>
-</nz-table>
+<nz-spin [nzSpinning]="loading">
+  <nz-table #table [nzData]="categories">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Icon</th>
+        <th>Transactions</th>
+        <th>Created At</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let category of table.data">
+        <td>{{ category.name }}</td>
+        <td>{{ category.transactionType }}</td>
+        <td>{{ category.iconUrl }}</td>
+        <td>{{ category.transactions }}</td>
+        <td>{{ category.createdOn }}</td>
+        <td>
+          <a>Edit</a>
+          <nz-divider nzType="vertical"></nz-divider>
+          <a>Delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</nz-spin>

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { Guard } from './guard.guard';
+import { Guard } from './utils/guard';
 import { LayoutsComponent } from './layouts/layouts.component';
 import { CreateCategoryComponent } from './pages/create-category/create-category.component';
 import { CreateUserComponent } from './pages/create-user/create-user.component';
@@ -41,7 +41,10 @@ const routes: Routes = [
       },
       {
         path: 'categories/manage-categories',
-        component: ManageCategoriesComponent,
+        loadChildren: () =>
+          import('./pages/manage-categories/manage-categories.module').then(
+            (m) => m.ManageCategoriesModule
+          ),
       },
     ],
   },
