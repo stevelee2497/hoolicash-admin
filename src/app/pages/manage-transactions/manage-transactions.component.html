@@ -1,0 +1,29 @@
+<nz-spin [nzSpinning]="loading">
+  <nz-table #table [nzData]="transactions">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Detail</th>
+        <th>Amount</th>
+        <th>Type</th>
+        <th>Created At</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transaction of table.data">
+        <td>{{ transaction.title }}</td>
+        <td>{{ transaction.detail }}</td>
+        <td>{{ transaction.amount }}</td>
+        <td>{{ transaction.transactionType }}</td>
+        <td>{{ transaction.createdOn }}</td>
+        <td>
+          <a>Edit</a>
+          <button nz-button nzType="link" nzDanger (click)="onDelete(transaction.id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</nz-spin>

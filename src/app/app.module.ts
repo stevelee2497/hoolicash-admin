@@ -16,6 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { LoginModule } from './pages/login/login.module';
 import { CreateCategoryModule } from './pages/create-category/create-category.module';
 import { NzInputModule } from 'ng-zorro-antd/input';
+import { ManageTransactionsModule } from './pages/manage-transactions/manage-transactions.module';
 
 registerLocaleData(en);
 
@@ -31,6 +32,7 @@ registerLocaleData(en);
     ManageUsersModule,
     CreateCategoryModule,
     ManageCategoriesModule,
+    ManageTransactionsModule,
     LoginModule,
     AppRoutingModule,
   ],
