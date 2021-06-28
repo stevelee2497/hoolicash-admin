@@ -17,6 +17,7 @@ import { LoginModule } from './pages/login/login.module';
 import { CreateCategoryModule } from './pages/create-category/create-category.module';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { ManageTransactionsModule } from './pages/manage-transactions/manage-transactions.module';
+import { ManageWalletsModule } from './pages/manage-wallets/manage-wallets.module';
 
 registerLocaleData(en);
 
@@ -28,13 +29,14 @@ registerLocaleData(en);
     HttpClientModule,
     BrowserAnimationsModule,
     LayoutsModule,
+    AppRoutingModule,
+    LoginModule,
     CreateUserModule,
     ManageUsersModule,
     CreateCategoryModule,
     ManageCategoriesModule,
     ManageTransactionsModule,
-    LoginModule,
-    AppRoutingModule,
+    ManageWalletsModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent],

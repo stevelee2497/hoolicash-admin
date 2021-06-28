@@ -1,0 +1,25 @@
+<nz-spin [nzSpinning]="loading">
+  <nz-table #table [nzData]="wallets">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Icon</th>
+        <th>Transactions</th>
+        <th>Created At</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let wallet of table.data">
+        <td>{{ wallet.name }}</td>
+        <td>{{ wallet.icon }}</td>
+        <td>{{ wallet.transactions }}</td>
+        <td>{{ wallet.createdOn }}</td>
+        <td>
+          <a>Edit</a>
+          <button nz-button nzType="link" nzDanger (click)="onDelete(wallet.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</nz-spin>

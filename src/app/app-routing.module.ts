@@ -9,6 +9,7 @@ import { ManageCategoriesComponent } from './pages/manage-categories/manage-cate
 import { ManageUsersComponent } from './pages/manage-users/manage-users.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { ManageTransactionsComponent } from './pages/manage-transactions/manage-transactions.component';
+import { ManageWalletsComponent } from './pages/manage-wallets/manage-wallets.component';
 
 const routes: Routes = [
   {
@@ -50,6 +51,10 @@ const routes: Routes = [
       {
         path: 'transactions/manage-transactions',
         component: ManageTransactionsComponent,
+      },
+      {
+        path: 'wallets/manage-wallets',
+        component: ManageWalletsComponent,
       },
     ],
   },
