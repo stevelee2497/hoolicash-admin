@@ -2,7 +2,7 @@ export interface Category {
   id: string;
   name: string;
   transactionType: string;
-  transactions: number;
+  transactionCount: number;
   iconUrl: string;
   createdOn: string;
 }

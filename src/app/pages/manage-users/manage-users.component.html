@@ -1,22 +1,30 @@
-<nz-table #userTable [nzData]="users">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Age</th>
-      <th>Address</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let user of userTable.data">
-      <td>{{ user.name }}</td>
-      <td>{{ user.age }}</td>
-      <td>{{ user.address }}</td>
-      <td>
-        <a>Action 一 {{ user.name }}</a>
-        <nz-divider nzType="vertical"></nz-divider>
-        <a>Delete</a>
-      </td>
-    </tr>
-  </tbody>
-</nz-table>
+<nz-spin [nzSpinning]="loading">
+  <nz-table #table [nzData]="users">
+    <thead>
+      <tr>
+        <th>Email</th>
+        <th>DisplayName</th>
+        <th>Avatar</th>
+        <th>Transaction Count</th>
+        <th>Wallet Count</th>
+        <th>Password Last Updated</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of table.data">
+        <td>{{ user.email }}</td>
+        <td>{{ user.displayName }}</td>
+        <td>{{ user.avatarUrl }}</td>
+        <td>{{ user.transactionCount }}</td>
+        <td>{{ user.walletCount }}</td>
+        <td>{{ user.passwordLastUpdatedTime }}</td>
+        <td>
+          <a>Edit</a>
+          <nz-divider nzType="vertical"></nz-divider>
+          <a>Block</a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</nz-spin>

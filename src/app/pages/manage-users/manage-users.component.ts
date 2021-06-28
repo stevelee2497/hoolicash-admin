@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Person } from 'src/app/models/user';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
+import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -8,11 +9,23 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./manage-users.component.scss'],
 })
 export class ManageUsersComponent implements OnInit {
-  users: Person[];
+  users: User[] = [];
+  loading: boolean = false;
 
-  constructor(private userService: UserService) {
-    this.users = this.userService.getUsers();
+  constructor(private userService: UserService, private notification: NzNotificationService) {}
+
+  ngOnInit(): void {
+    this.loading = true;
+    this.userService.getUsers().subscribe(
+      (data: User[]) => {
+        this.loading = false;
+        this.users = data;
+      },
+      (error: Error) => {
+        this.loading = false;
+        console.log(error);
+        this.notification.error('Failed to get users', error.message);
+      }
+    );
   }
-
-  ngOnInit(): void {}
 }

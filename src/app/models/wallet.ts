@@ -1,7 +1,7 @@
 export interface Wallet {
   id: string;
   name: string;
-  transactions: number;
-  icon: string;
+  transactionCount: number;
+  iconUrl: string;
   createdOn: string;
 }
