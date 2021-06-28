@@ -1,1 +1,27 @@
-<p>create-category works!</p>
+<form nz-form [formGroup]="form" (ngSubmit)="submitForm()">
+  <nz-form-label>Name</nz-form-label>
+  <nz-form-item>
+    <nz-form-control [nzSpan]="10" nzErrorTip="Please input category name.">
+      <nz-input-group>
+        <input formControlName="name" nz-input />
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-label>Type</nz-form-label>
+  <nz-form-item>
+    <nz-form-control [nzSpan]="10" nzErrorTip="Please input category type.">
+      <nz-input-group>
+        <input formControlName="type" nz-input />
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-label>icon</nz-form-label>
+  <nz-form-item>
+    <nz-form-control [nzSpan]="10" nzErrorTip="Please input category icon.">
+      <nz-input-group>
+        <input formControlName="icon" nz-input />
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+  <button nz-button nzType="primary" [disabled]="!form.valid">Create</button>
+</form>

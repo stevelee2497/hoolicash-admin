@@ -19,8 +19,7 @@
         <td>{{ category.createdOn }}</td>
         <td>
           <a>Edit</a>
-          <nz-divider nzType="vertical"></nz-divider>
-          <a>Delete</a>
+          <button nz-button nzType="link" nzDanger (click)="onDelete(category.id)">Delete</button>
         </td>
       </tr>
     </tbody>

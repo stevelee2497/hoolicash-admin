@@ -11,4 +11,8 @@ export class CategoryService {
   getCategories() {
     return this.httpHelper.request<Category[]>('GET', '/category');
   }
+
+  deleteCategory(id: string) {
+    return this.httpHelper.request<Category>('DELETE', `/category/${id}`);
+  }
 }

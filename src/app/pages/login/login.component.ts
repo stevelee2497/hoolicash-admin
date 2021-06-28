@@ -1,4 +1,3 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -34,14 +33,13 @@ export class LoginComponent implements OnInit {
       this.loading = true;
       this.authService.login(this.loginForm.value).subscribe(
         (data: LoginResponse) => {
+          this.loading = false;
           localStorage.setItem('token', data.accessToken);
           this.router.navigate(['/welcome']);
         },
-        (error: HttpErrorResponse) => {
-          console.log(error);
-        },
-        () => {
+        (error) => {
           this.loading = false;
+          console.log(error);
         }
       );
     }
